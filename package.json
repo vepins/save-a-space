@@ -1,5 +1,8 @@
 {
   "name": "save-a-space",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^4.18.1",
+    "jshint": "^2.9.5"
+  }
 }
