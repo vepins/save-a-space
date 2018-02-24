@@ -1,2 +1,11 @@
 <h1>this is the friggin landing page!</h1>
 
+<p>
+    <% if user_signed_in? %>
+        <a><%= link_to "Edit Profile", edit_user_registration_path %></a>
+        <a><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a>
+        <a><%= link_to "ALL THE ROOMS", rooms_path %></a>
+    <% else %>
+        <p>please sign up</p>
+    <% end %>
+</p>
