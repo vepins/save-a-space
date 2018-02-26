@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: f2db689ba567d1a018f4dacb1ccf909adc93e887
+  specs:
+    bcrypt (3.1.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,7 +49,6 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (8.0.0)
       execjs
-    bcrypt (3.1.11)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -199,6 +204,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt!
   better_errors
   bootstrap-sass
   byebug
