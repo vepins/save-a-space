@@ -11,27 +11,183 @@
     </div>
   <% end %>
 
+<div class="jumbotron">
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :reservation_user_id %>
+    <%= form.hidden_field :user_id, id: :reservation_user_id  %>
   </div>
 
-  <div class="field">
-    <%= form.label :room_id %>
+  <div class="form-group">
+    <%= form.label :room_id, "What room would you like to reserve?" %>
     <%= form.number_field :room_id, id: :reservation_room_id %>
   </div>
 
-  <div class="field">
+
+  <div class="form-group">
+  <%= form.label :reservation_start_date_hour, "When would you like to reserve the room?" %>
+  <div class='input-group date' id='datetimepicker1'>
+
+                     <%= form.text_field :reservation_start_date_hour, class: "form-control" %>
+                     <!-- <input type='text' class="form-control" /> -->
+                     <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-calendar"></span>
+                     </span>
+                 </div>
+
+      <script type="text/javascript">
+         $(function () {
+         $('#datetimepicker1').datetimepicker({
+           viewMode: 'days',
+           format: 'MM/DD/YYYY',
+           minDate: '02/20/2018'
+         });
+       });
+      </script>
+  </div>
+</div>
+
+
+
+
+  <!-- <div class="field">
     <%= form.label :start_date_hour %>
     <%= form.datetime_select :start_date_hour, id: :reservation_start_date_hour %>
+  </div> -->
+
+  <div class="form-group">
+  <%= form.label :end_date_hour, "End Time:" %>
+  <div class='input-group date' id='datetimepicker2'>
+
+                     <%= form.text_field :reservation_end_date_hour, class: "form-control" %>
+                     <!-- <input type='text' class="form-control" /> -->
+                     <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-time"></span>
+                     </span>
+                 </div>
+
+      <script type="text/javascript">
+         $(function () {
+         $('#datetimepicker2').datetimepicker({
+           format: 'LT'
+         });
+       });
+      </script>
+  </div>
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= form.label :end_date_hour %>
     <%= form.datetime_select :end_date_hour, id: :reservation_end_date_hour %>
-  </div>
+  </div> -->
 
-  <div class="actions">
+  <div class="btn btn-default">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<!-- =======================start CONTAINER ====================== -->
+<!-- <div class="container">
+
+  <div class="row col-md-3">  </div>
+
+  <div class="">
+
+  </div>
+
+  <div class="col-md-6">
+
+    <div class='well well-lg'>
+    <h3 class="page-heading">Reserve a Room:</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker4'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+
+            <script type="text/javascript">
+               $(function () {
+               $('#datetimepicker4').datetimepicker({
+                 viewMode: 'days',
+                 format: 'MM/DD/YYYY'
+               });
+             });
+            </script>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="well well-lg">
+        <h4>Start Time: </h4>
+        <div class="container">
+          <div class="row">
+            <div class='col-sm-3'>
+              <div class="form-group">
+                <div class='input-group date' id="datetimepicker2">
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+              <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker2').datetimepicker({
+                      format: 'LT'
+                  });
+              });
+              </script>
+            </div>
+          </div>
+        </div>
+
+
+        <h4>End Time: </h4>
+        <div class="container">
+          <div class="row">
+            <div class='col-sm-3'>
+              <div class="form-group">
+                <div class='input-group date' id="datetimepicker3">
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+                <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker3').datetimepicker({
+                          format: 'LT'
+                      });
+                  });
+                </script>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    <!-- <div class="well well-lg">
+      <div class="container">
+        <div class="row">
+          <div class='col-sm-3'>
+            <div class="form-group">
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+  <!-- <div class="row col-md-3">
+    </div>
+    <canvas id="myCanvas">
+    	</canvas>
+  </div>
+</div>
+<!-- END CONTAINER -->
