@@ -1,6 +1,6 @@
 class Reservation < ApplicationRecord
-    belongs_to :room
+    belongs_to :room, :users
 
-    has_many :users
+    
 
 end
