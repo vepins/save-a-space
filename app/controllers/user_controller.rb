@@ -3,6 +3,8 @@ class UserController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @user_name = @post.user.name
   end
 
   def edit
