@@ -3,8 +3,9 @@ class CreateReservations < ActiveRecord::Migration[5.1]
     create_table :reservations do |t|
       t.integer :user_id
       t.integer :room_id
-      t.datetime :start_date_hour
-      t.datetime :end_date_hour
+      t.string :start_date_hour
+      t.string :end_date_hour
+      t.string :year_month_day
 
       t.timestamps
     end
