@@ -10,16 +10,15 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.all
-    @post = Post.find(params[:id])
-    @room_name = @post.room.name
+    @res = Reservation.where(user_id: current_user.id)
 
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    @post = Post.find(params[:id])
-   @room_name = @post.room.name
+    @res = Reservation.where(user_id: current_user.id)
+    # @room_name = @post.room.name
 
   end
 
