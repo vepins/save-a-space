@@ -24,7 +24,6 @@
       <div class='input-group date' id='datetimepicker1'>
 
                          <%= form.text_field :reservation_year_month_day, class: "form-control" %>
-                         <!-- <input type='text' class="form-control" /> -->
                          <span class="input-group-addon">
                              <span class="glyphicon glyphicon-calendar"></span>
                          </span>
@@ -42,10 +41,6 @@
       </div>
 
     </div>
-
-    <!-- start_date_hour
-    end_date_hour
-    year_month_day -->
 
       <div class="form-group well well-lg">
         <div class="field">
@@ -91,7 +86,7 @@
 
       <div class="form-group well well-lg">
         <%= form.label :room_id, "What room would you like to reserve?" %>
-        <%= form.number_field :room_id, id: :reservation_room_id %>
+        <%= form.select(:room_id, @rooms.collect{ |c| [c.name, c.id]}, {include_blank: "Select Room"}, class: "form-control", required: true) %>
       </div>
 
 
@@ -101,111 +96,3 @@
     <% end %>
   </div>
 </div>
-
-
-<!-- =======================start CONTAINER ====================== -->
-<!--
-
-  <div class="row col-md-3">  </div>
-
-  <div class="">
-
-  </div>
-
-  <div class="col-md-6">
-
-    <div class='well well-lg'>
-    <h3 class="page-heading">Reserve a Room:</h3>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="form-group">
-                    <div class='input-group date' id='datetimepicker4'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                    </div>
-                </div>
-
-            <script type="text/javascript">
-               $(function () {
-               $('#datetimepicker4').datetimepicker({
-                 viewMode: 'days',
-                 format: 'MM/DD/YYYY'
-               });
-             });
-            </script>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="well well-lg">
-        <h4>Start Time: </h4>
-        <div class="container">
-          <div class="row">
-            <div class='col-sm-3'>
-              <div class="form-group">
-                <div class='input-group date' id="datetimepicker2">
-                  <input type='text' class="form-control" />
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-time"></span>
-                  </span>
-                </div>
-              </div>
-              <script type="text/javascript">
-              $(function () {
-                  $('#datetimepicker2').datetimepicker({
-                      format: 'LT'
-                  });
-              });
-              </script>
-            </div>
-          </div>
-        </div>
-
-
-        <h4>End Time: </h4>
-        <div class="container">
-          <div class="row">
-            <div class='col-sm-3'>
-              <div class="form-group">
-                <div class='input-group date' id="datetimepicker3">
-                  <input type='text' class="form-control" />
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-time"></span>
-                  </span>
-                </div>
-              </div>
-                <script type="text/javascript">
-                  $(function () {
-                      $('#datetimepicker3').datetimepicker({
-                          format: 'LT'
-                      });
-                  });
-                </script>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-    <!-- <div class="well well-lg">
-      <div class="container">
-        <div class="row">
-          <div class='col-sm-3'>
-            <div class="form-group">
-            </div>
-          </div>
-        </div>
-    </div>
-
-
-
-  <!-- <div class="row col-md-3">
-    </div>
-    <canvas id="myCanvas">
-    	</canvas>
-  </div>
-</div>
-<!-- END CONTAINER -->
