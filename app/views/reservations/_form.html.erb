@@ -11,108 +11,96 @@
     </div>
   <% end %>
 
-<div class="well well-lg">
-  <div class="field">
-    <%= form.hidden_field :user_id, id: :reservation_user_id, value: current_user.id  %>
-  </div>
+<div class="col-md-6">
+  <div class="row">
 
-  <div class="form-group">
-  <%= form.label :reservation_year_month_day, "When would you like to reserve the room?" %>
-  <div class='input-group date' id='datetimepicker1'>
-
-                     <%= form.text_field :reservation_year_month_day, class: "form-control" %>
-                     <!-- <input type='text' class="form-control" /> -->
-                     <span class="input-group-addon">
-                         <span class="glyphicon glyphicon-calendar"></span>
-                     </span>
-                 </div>
-
-      <script type="text/javascript">
-         $(function () {
-         $('#datetimepicker1').datetimepicker({
-           viewMode: 'days',
-           format: 'YYYY/MM/DD',
-           minDate: '02/20/2018'
-         });
-       });
-      </script>
-  </div>
-
-</div>
-
-<!-- start_date_hour
-end_date_hour
-year_month_day -->
-
-  <div class="form-group well well-lg">
-    <div class="field">
-      <%= form.label :start_date_hour, "Start Time:" %>
-      <div class='input-group date' id="datetimepicker2">
-      <%= form.text_field :reservation_start_date_hour, class: "form-control" %>
-        <span class="input-group-addon">
-            <span class="glyphicon glyphicon-time"></span>
-        </span>
+    <div class="well well-lg">
+      <div class="field">
+        <%= form.hidden_field :user_id, id: :reservation_user_id, value: current_user.id  %>
       </div>
 
-      <script type="text/javascript">
-        $(function () {
-        $('#datetimepicker2').datetimepicker({
-          format: 'LT'
-          });
-        });
-      </script>
-    </div>
-  </div>
+      <div class="form-group">
+      <%= form.label :reservation_year_month_day, "When would you like to reserve the room?" %>
+      <div class='input-group date' id='datetimepicker1'>
 
-  <div class="form-group well well-lg">
-    <div class="field">
-      <%= form.label :end_date_hour, "End Time:"%>
-        <div class='input-group date' id='datetimepicker3'>
-           <%= form.text_field :reservation_end_date_hour, class: "form-control"%>
-             <span class="input-group-addon">
-                 <span class="glyphicon glyphicon-time"></span>
-             </span>
+                         <%= form.text_field :reservation_year_month_day, class: "form-control" %>
+                         <!-- <input type='text' class="form-control" /> -->
+                         <span class="input-group-addon">
+                             <span class="glyphicon glyphicon-calendar"></span>
+                         </span>
+                     </div>
+
+          <script type="text/javascript">
+             $(function () {
+             $('#datetimepicker1').datetimepicker({
+               viewMode: 'days',
+               format: 'YYYY/MM/DD',
+               minDate: '02/20/2018'
+             });
+           });
+          </script>
+      </div>
+
+    </div>
+
+    <!-- start_date_hour
+    end_date_hour
+    year_month_day -->
+
+      <div class="form-group well well-lg">
+        <div class="field">
+          <%= form.label :start_date_hour, "Start Time:" %>
+          <div class='input-group date' id="datetimepicker2">
+          <%= form.text_field :reservation_start_date_hour, class: "form-control" %>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+
+          <script type="text/javascript">
+            $(function () {
+            $('#datetimepicker2').datetimepicker({
+              format: 'LT'
+              });
+            });
+          </script>
         </div>
+      </div>
 
-      <script type="text/javascript">
-         $(function () {
-         $('#datetimepicker3').datetimepicker({
-           format: 'LT'
-         });
-       });
-      </script>
-    </div>
+      <div class="form-group well well-lg">
+        <div class="field">
+          <%= form.label :end_date_hour, "End Time:"%>
+            <div class='input-group date' id='datetimepicker3'>
+               <%= form.text_field :reservation_end_date_hour, class: "form-control"%>
+                 <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-time"></span>
+                 </span>
+            </div>
+
+          <script type="text/javascript">
+             $(function () {
+             $('#datetimepicker3').datetimepicker({
+               format: 'LT'
+             });
+           });
+          </script>
+        </div>
+      </div>
+
+
+
+      <div class="form-group well well-lg">
+        <%= form.label :room_id, "What room would you like to reserve?" %>
+        <%= form.number_field :room_id, id: :reservation_room_id %>
+      </div>
+
+
+      <div>
+        <%= form.submit class: "btn btn-info" %>
+      </div>
+    <% end %>
   </div>
 </div>
-
-
-
-
-  <!-- <div class="field">
-    <%= form.label :start_date_hour %>
-    <%= form.datetime_select :start_date_hour, id: :reservation_start_date_hour %>
-  </div> -->
-
-
-
-
-  <!-- <div class="field">
-    <%= form.label :end_date_hour %>
-    <%= form.datetime_select :end_date_hour, id: :reservation_end_date_hour %>
-  </div> -->
-
-
-  <div class="form-group well well-lg">
-    <%= form.label :room_id, "What room would you like to reserve?" %>
-    <%= form.number_field :room_id, id: :reservation_room_id %>
-  </div>
-
-
-  <div>
-    <%= form.submit class: "btn btn-info" %>
-  </div>
-<% end %>
-
 
 
 <!-- =======================start CONTAINER ====================== -->
