@@ -1,32 +1,26 @@
-<%= form_with(model: reservation, local: true) do |form| %>
-  <% if reservation.errors.any? %>
+<%= form_with(model: @reservation, local: true) do |form| %>
+  <% if @reservation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
       <ul>
-      <% reservation.errors.full_messages.each do |message| %>
+      <% @reservation.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-<div class="jumbotron">
+<div class="well well-lg">
   <div class="field">
     <%= form.hidden_field :user_id, id: :reservation_user_id  %>
   </div>
 
   <div class="form-group">
-    <%= form.label :room_id, "What room would you like to reserve?" %>
-    <%= form.number_field :room_id, id: :reservation_room_id %>
-  </div>
-
-
-  <div class="form-group">
-  <%= form.label :reservation_start_date_hour, "When would you like to reserve the room?" %>
+  <%= form.label :reservation_year_month_day, "When would you like to reserve the room?" %>
   <div class='input-group date' id='datetimepicker1'>
 
-                     <%= form.text_field :reservation_start_date_hour, class: "form-control" %>
+                     <%= form.text_field :reservation_year_month_day, class: "form-control" %>
                      <!-- <input type='text' class="form-control" /> -->
                      <span class="input-group-addon">
                          <span class="glyphicon glyphicon-calendar"></span>
@@ -37,31 +31,57 @@
          $(function () {
          $('#datetimepicker1').datetimepicker({
            viewMode: 'days',
-           format: 'MM/DD/YYYY',
+           format: 'YYYY/MM/DD',
            minDate: '02/20/2018'
          });
        });
       </script>
   </div>
-    <div class="form-group">
-  <%= form.label :end_date_hour, "End Time:" %>
-  <div class='input-group date' id='datetimepicker2'>
 
-                     <%= form.text_field :reservation_end_date_hour, class: "form-control" %>
-                     <!-- <input type='text' class="form-control" /> -->
-                     <span class="input-group-addon">
-                         <span class="glyphicon glyphicon-time"></span>
-                     </span>
-                 </div>
+</div>
+
+<!-- start_date_hour
+end_date_hour
+year_month_day -->
+
+  <div class="form-group well well-lg">
+    <div class="field">
+      <%= form.label :start_date_hour, "Start Time:" %>
+      <div class='input-group date' id="datetimepicker2">
+      <%= form.text_field :reservation_start_date_hour, class: "form-control" %>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-time"></span>
+        </span>
+      </div>
+
+      <script type="text/javascript">
+        $(function () {
+        $('#datetimepicker2').datetimepicker({
+          format: 'LT'
+          });
+        });
+      </script>
+    </div>
+  </div>
+
+  <div class="form-group well well-lg">
+    <div class="field">
+      <%= form.label :end_date_hour, "End Time:"%>
+        <div class='input-group date' id='datetimepicker3'>
+           <%= form.text_field :reservation_end_date_hour, class: "form-control"%>
+             <span class="input-group-addon">
+                 <span class="glyphicon glyphicon-time"></span>
+             </span>
+        </div>
 
       <script type="text/javascript">
          $(function () {
-         $('#datetimepicker2').datetimepicker({
+         $('#datetimepicker3').datetimepicker({
            format: 'LT'
          });
        });
       </script>
-  </div>
+    </div>
   </div>
 </div>
 
@@ -75,19 +95,28 @@
 
 
 
+
   <!-- <div class="field">
     <%= form.label :end_date_hour %>
     <%= form.datetime_select :end_date_hour, id: :reservation_end_date_hour %>
   </div> -->
 
-  <div class="btn btn-default">
-    <%= form.submit %>
+
+  <div class="form-group well well-lg">
+    <%= form.label :room_id, "What room would you like to reserve?" %>
+    <%= form.number_field :room_id, id: :reservation_room_id %>
+  </div>
+
+
+  <div>
+    <%= form.submit class: "btn btn-info" %>
   </div>
 <% end %>
 
 
+
 <!-- =======================start CONTAINER ====================== -->
-<!-- <div class="container">
+<!--
 
   <div class="row col-md-3">  </div>
 

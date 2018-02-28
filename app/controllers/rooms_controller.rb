@@ -4,17 +4,23 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
 
-  def landing_page 
-    
+  def landing_page
+
   end
 
   def index
     @rooms = Room.all
+    @post = Post.find(params[:id])
+    @room_name = @post.room.name
+
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @post = Post.find(params[:id])
+   @room_name = @post.room.name
+
   end
 
   # GET /rooms/new
