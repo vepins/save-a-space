@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20180301020902) do
     t.integer "room_id"
     t.string "start_date_hour"
     t.string "end_date_hour"
+    t.string "year_month_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "year_month_day"
   end
 
   create_table "rooms", force: :cascade do |t|
