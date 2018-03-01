@@ -11,22 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :room_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :time_slot %>
-    <%= form.text_field :time_slot, id: :room_time_slot %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :room_user_id %>
+    <%= form.text_field :name, id: :room_name, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit class: "btn btn-info" %>
+  </div><br>
 <% end %>
