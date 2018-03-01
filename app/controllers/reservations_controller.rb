@@ -21,6 +21,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/1/edit
   def edit
+    @rooms = Room.all
   end
 
   # POST /reservations
@@ -71,6 +72,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:user_id, :room_id, :start_date_hour, :end_date_hour)
+      params.require(:reservation).permit(:user_id, :room_id, :start_date_hour, :end_date_hour, :year_month_day)
     end
 end

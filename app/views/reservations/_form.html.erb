@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-<div class="col-md-6">
-  <div class="row">
+<div class="row">
+  <div class="col-md-6">
 
     <div class="well well-lg">
       <div class="field">
@@ -20,10 +20,10 @@
       </div>
 
       <div class="form-group">
-      <%= form.label :reservation_year_month_day, "When would you like to reserve the room?" %>
+      <%= form.label :year_month_day, "When would you like to reserve the room?" %>
       <div class='input-group date' id='datetimepicker1'>
 
-                         <%= form.text_field :reservation_year_month_day, class: "form-control" %>
+                         <%= form.text_field :year_month_day, class: "form-control" %>
                          <span class="input-group-addon">
                              <span class="glyphicon glyphicon-calendar"></span>
                          </span>
@@ -46,7 +46,7 @@
         <div class="field">
           <%= form.label :start_date_hour, "Start Time:" %>
           <div class='input-group date' id="datetimepicker2">
-          <%= form.text_field :reservation_start_date_hour, class: "form-control" %>
+          <%= form.text_field :start_date_hour, class: "form-control" %>
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-time"></span>
             </span>
@@ -66,7 +66,7 @@
         <div class="field">
           <%= form.label :end_date_hour, "End Time:"%>
             <div class='input-group date' id='datetimepicker3'>
-               <%= form.text_field :reservation_end_date_hour, class: "form-control"%>
+               <%= form.text_field :end_date_hour, class: "form-control"%>
                  <span class="input-group-addon">
                      <span class="glyphicon glyphicon-time"></span>
                  </span>

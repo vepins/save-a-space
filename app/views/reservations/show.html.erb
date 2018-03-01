@@ -2,12 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @reservation.user_id %>
+  <%= @reservation.user.name %>
 </p>
 
 <p>
   <strong>Room:</strong>
-  <%= @reservation.room_id %>
+  <%= @reservation.room.name %>
 </p>
 
 <p>
@@ -18,6 +18,11 @@
 <p>
   <strong>End date hour:</strong>
   <%= @reservation.end_date_hour %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reservation.year_month_day %>
 </p>
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
