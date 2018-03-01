@@ -1,10 +1,7 @@
 <h1><%= current_user.name %>'s Reservations</h1>
 
-<h3> @user.email <h3>
-
 <%= @reservation_user_id %>
 
-<div class="well">
 <table class="table">
   <thead>
     <tr>
@@ -33,5 +30,4 @@
 
 <br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
-</div>
+<%= link_to 'New Reservation', new_reservation_path, class: "btn btn-default" %>
