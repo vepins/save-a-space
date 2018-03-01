@@ -21,6 +21,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/1/edit
   def edit
+    @rooms = Room.all
   end
 
   # POST /reservations
