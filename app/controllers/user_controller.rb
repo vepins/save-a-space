@@ -3,8 +3,8 @@ class UserController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @user_name = @post.user.name
+    @res = Reservation.where(user_id: current_user.id)
+
   end
 
   def edit

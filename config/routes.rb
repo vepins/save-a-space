@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'users' => 'user#index'
 
-  get 'user/show'
+  get 'bookings' => 'user#show'
 
   get 'user/edit'
 
