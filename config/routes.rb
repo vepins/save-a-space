@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'user/destroy'
 
+  get 'reservations/show'
+
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

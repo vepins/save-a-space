@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   # GET /reservations/1
   # GET /reservations/1.json
   def show
-    @reservations = Reservation.all
+    @reservation = Reservation.where(user_id: current_user.id)
   end
 
   # GET /reservations/new
